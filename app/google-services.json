@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "570907559037",
+    "project_id": "gamebase-7a9f7",
+    "storage_bucket": "gamebase-7a9f7.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:570907559037:android:24d8b4aacd3a63a5075d14",
+        "android_client_info": {
+          "package_name": "com.example.gamebase"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNqCtNLdzsI5bdIWvnIds5Y0gBfRUhF14"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

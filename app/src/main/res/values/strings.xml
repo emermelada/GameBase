@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">GameBase</string>
+    <string name="userCreated">\"Usuario creado correctamente.\"</string>
+    <string name="userAlreadyExists">Ese usuario ya existe.</string>
 </resources>

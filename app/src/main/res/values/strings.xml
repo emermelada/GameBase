@@ -2,4 +2,7 @@
     <string name="app_name">GameBase</string>
     <string name="userCreated">\"Usuario creado correctamente.\"</string>
     <string name="userAlreadyExists">Ese usuario ya existe.</string>
+    <string name="emailSignUp">"Correo electrónico: "</string>
+    <string name="usernameSignUp">Nombre de usuario:</string>
+    <string name="passwordSignUp">Contraseña:</string>
 </resources>

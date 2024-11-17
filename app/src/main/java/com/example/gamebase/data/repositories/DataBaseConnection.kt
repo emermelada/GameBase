@@ -7,7 +7,7 @@ import com.google.firebase.firestore.toObject
 import com.google.firebase.ktx.Firebase
 
 class DataBaseConnection {
-    val db = Firebase.firestore
+    private val db = Firebase.firestore
 
     fun getUser(id: String): User?{
         val docRef = db.collection("users").document(id)

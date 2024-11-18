@@ -5,4 +5,6 @@
     <string name="emailSignUp">"Correo electrónico: "</string>
     <string name="usernameSignUp">Nombre de usuario:</string>
     <string name="passwordSignUp">Contraseña:</string>
+    <string name="passwordSignUpCheck">Repita la contraseña:</string>
+    <string name="signUpButton">Registrar</string>
 </resources>

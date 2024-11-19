@@ -1,18 +1,32 @@
 package com.example.gamebase
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import com.example.gamebase.ui.screens.register.SignUpScreen
-import com.example.gamebase.ui.theme.GameBaseTheme
+import com.example.gamebase.ui.activities.SignUpActivity
+import com.google.firebase.Firebase
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.auth
+
 
 class MainActivity : ComponentActivity() {
+
+    private lateinit var auth: FirebaseAuth
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
-            GameBaseTheme {
-                SignUpScreen()
-            }
+        // Initialize Firebase Auth
+        auth = Firebase.auth
+    }
+
+    public override fun onStart() {
+        super.onStart()
+        // Check if user is signed in (non-null) and update UI accordingly.
+        val currentUser = auth.currentUser
+        if (currentUser == null) {
+            val intent = Intent(this, SignUpActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 }

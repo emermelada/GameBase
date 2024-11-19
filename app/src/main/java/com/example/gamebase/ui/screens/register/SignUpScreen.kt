@@ -22,7 +22,7 @@ import com.example.gamebase.ui.components.gameBaseHeader
 import com.example.gamebase.ui.components.registerLogInField
 
 @Composable
-fun SignUpScreen(){
+fun SignUpScreen(onClickSignUp: (String, String)-> Unit){
     var email by remember { mutableStateOf<String>("") }
     var username by remember { mutableStateOf<String>("") }
     var password by remember { mutableStateOf<String>("") }
@@ -46,10 +46,15 @@ fun SignUpScreen(){
             Button(
                 modifier = Modifier
                     .padding(8.dp),
-                onClick = { print("Email: ${email}, Usuario: ${username}, Email: ${password}.") }
+                onClick = {
+                    if (password == passwordCheck) {
+                        onClickSignUp(email, password)
+                    }
+                }
             ) {
                 Text(text = stringResource(R.string.signUpButton))
             }
+
         }
     }
 }

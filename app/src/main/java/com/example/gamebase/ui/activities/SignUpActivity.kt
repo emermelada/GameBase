@@ -18,7 +18,7 @@ class SignUpActivity: ComponentActivity() {
         auth = FirebaseAuth.getInstance()
 
         setContent {
-            SignUpScreen { email, password ->
+            SignUpScreen (onClickSignUp = { email, password ->
                 if (email.isNotEmpty() && password.isNotEmpty()) {
                     createAccount(email, password)
                 } else {
@@ -27,8 +27,13 @@ class SignUpActivity: ComponentActivity() {
                         "Por favor, complete todos los campos.",
                         Toast.LENGTH_SHORT
                     ).show()
+                } },
+                onClickGoToLogIn = {
+                    val intent = Intent(this, LogInActivity::class.java)
+                    startActivity(intent)
+                    finish()
                 }
-            }
+            )
         }
     }
 

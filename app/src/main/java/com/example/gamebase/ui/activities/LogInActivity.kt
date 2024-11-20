@@ -30,7 +30,7 @@ class LogInActivity: ComponentActivity() {
                         ).show()
                     }
                 },
-                onClickGoToSignIn = {
+                onClickGoToSignUp = {
                     val intent = Intent(this, SignUpActivity::class.java)
                     startActivity(intent)
                     finish()

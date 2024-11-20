@@ -17,15 +17,16 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import com.example.gamebase.R
 import com.example.gamebase.ui.components.gameBaseHeader
 import com.example.gamebase.ui.components.registerLogInField
 
 @Composable
-fun LogInScreen(onClickLogIn: (String, String)-> Unit, onClickGoToSignIn: ()-> Unit){
-    var email by remember { mutableStateOf<String>("") }
-    var password by remember { mutableStateOf<String>("") }
+fun LogInScreen(onClickLogIn: (String, String)-> Unit, onClickGoToSignUp: ()-> Unit){
+    var email by remember { mutableStateOf("") }
+    var password by remember { mutableStateOf("") }
 
     Column{
         gameBaseHeader()
@@ -52,8 +53,9 @@ fun LogInScreen(onClickLogIn: (String, String)-> Unit, onClickGoToSignIn: ()-> U
             }
             Text(
                 text = stringResource(R.string.noAccountMessage),
-                modifier = Modifier.clickable {onClickGoToSignIn()
-                })
+                modifier = Modifier.clickable {onClickGoToSignUp() },
+                textDecoration = TextDecoration.Underline
+            )
         }
     }
 }

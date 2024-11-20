@@ -9,4 +9,5 @@
     <string name="signUpButton">Registrar</string>
     <string name="logInButton">Inciar sesión.</string>
     <string name="noAccountMessage">¿No tienes cúenta? Pulsa aquí.</string>
+    <string name="hasAccountMessage">¿Tienes ya una cuenta? Haz click aquí.</string>
 </resources>

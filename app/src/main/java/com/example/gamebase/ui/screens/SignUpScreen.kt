@@ -1,5 +1,6 @@
 package com.example.gamebase.ui.screens
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -16,17 +17,18 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import com.example.gamebase.R
 import com.example.gamebase.ui.components.gameBaseHeader
 import com.example.gamebase.ui.components.registerLogInField
 
 @Composable
-fun SignUpScreen(onClickSignUp: (String, String)-> Unit){
-    var email by remember { mutableStateOf<String>("") }
-    var username by remember { mutableStateOf<String>("") }
-    var password by remember { mutableStateOf<String>("") }
-    var passwordCheck by remember { mutableStateOf<String>("") }
+fun SignUpScreen(onClickSignUp: (String, String)-> Unit, onClickGoToLogIn: () -> Unit){
+    var email by remember { mutableStateOf("") }
+    var username by remember { mutableStateOf("") }
+    var password by remember { mutableStateOf("") }
+    var passwordCheck by remember { mutableStateOf("") }
     Column{
         gameBaseHeader()
         Column(
@@ -54,7 +56,11 @@ fun SignUpScreen(onClickSignUp: (String, String)-> Unit){
             ) {
                 Text(text = stringResource(R.string.signUpButton))
             }
-
+            Text(
+                text = stringResource(R.string.hasAccountMessage),
+                modifier = Modifier.clickable {onClickGoToLogIn() },
+                textDecoration = TextDecoration.Underline
+            )
         }
     }
 }

@@ -16,7 +16,6 @@ class HomeAppActivity: ComponentActivity() {
 
         setContent {
             Text("Hola hola")
-            auth.signOut()
         }
     }
 }

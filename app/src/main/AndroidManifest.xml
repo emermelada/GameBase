@@ -24,7 +24,7 @@
         </activity>
         <activity android:name=".ui.activities.SignUpActivity" />
         <activity android:name=".ui.activities.LogInActivity" />
-
+        <activity android:name=".ui.activities.HomeAppActivity" />
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package com.example.gamebase.ui.screens.register
+package com.example.gamebase.ui.screens
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

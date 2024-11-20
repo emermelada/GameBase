@@ -7,4 +7,6 @@
     <string name="passwordSignUp">Contraseña:</string>
     <string name="passwordSignUpCheck">Repita la contraseña:</string>
     <string name="signUpButton">Registrar</string>
+    <string name="logInButton">Inciar sesión.</string>
+    <string name="noAccountMessage">¿No tienes cúenta? Pulsa aquí.</string>
 </resources>

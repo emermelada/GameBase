@@ -6,10 +6,10 @@ import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import com.example.gamebase.MainActivity
-import com.example.gamebase.ui.screens.SignUpScreen
+import com.example.gamebase.ui.screens.LogInScreen
 import com.google.firebase.auth.FirebaseAuth
 
-class SignUpActivity: ComponentActivity() {
+class LogInActivity: ComponentActivity() {
     private lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,22 +18,30 @@ class SignUpActivity: ComponentActivity() {
         auth = FirebaseAuth.getInstance()
 
         setContent {
-            SignUpScreen { email, password ->
-                if (email.isNotEmpty() && password.isNotEmpty()) {
-                    createAccount(email, password)
-                } else {
-                    Toast.makeText(
-                        this,
-                        "Por favor, complete todos los campos.",
-                        Toast.LENGTH_SHORT
-                    ).show()
+            LogInScreen(
+                onClickLogIn = { email, password ->
+                    if (email.isNotEmpty() && password.isNotEmpty()) {
+                        logInAccount(email, password)
+                    } else {
+                        Toast.makeText(
+                            this,
+                            "Por favor, complete todos los campos.",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                },
+                onClickGoToSignIn = {
+                    val intent = Intent(this, SignUpActivity::class.java)
+                    startActivity(intent)
+                    finish()
                 }
-            }
+            )
+
         }
     }
 
-    private fun createAccount(email: String, password: String) {
-        auth.createUserWithEmailAndPassword(email, password)
+    private fun logInAccount(email: String, password: String) {
+        auth.signInWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     val intent = Intent(this, MainActivity::class.java)

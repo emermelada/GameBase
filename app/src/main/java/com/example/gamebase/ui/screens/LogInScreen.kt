@@ -1,5 +1,6 @@
 package com.example.gamebase.ui.screens
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -49,16 +50,10 @@ fun LogInScreen(onClickLogIn: (String, String)-> Unit, onClickGoToSignIn: ()-> U
             ) {
                 Text(text = stringResource(R.string.logInButton))
             }
-
-            Button(
-                modifier = Modifier
-                    .padding(8.dp),
-                onClick = {
-                    onClickGoToSignIn()
-                }
-            ) {
-                Text(text = stringResource(R.string.noAccountMessage))
-            }
+            Text(
+                text = stringResource(R.string.noAccountMessage),
+                modifier = Modifier.clickable {onClickGoToSignIn()
+                })
         }
     }
 }

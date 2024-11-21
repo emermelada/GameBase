@@ -16,6 +16,9 @@ class GameListViewModel: ViewModel() {
     var previousPage by mutableStateOf<String?>(null)
         private set
 
+    var isFirstLoad by  mutableStateOf(true)
+        private set
+
     fun replaceGames (games:List<Game>){
         this.games = games
     }
@@ -26,5 +29,9 @@ class GameListViewModel: ViewModel() {
 
     fun replacePreviousPage (previousPage: String?){
         this.previousPage = previousPage
+    }
+
+    fun changeIsFirstLoad(){
+        this.isFirstLoad = false
     }
 }

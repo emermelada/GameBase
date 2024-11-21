@@ -2,7 +2,6 @@ package com.example.gamebase.ui.screens
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -33,11 +32,15 @@ val gameRepository = GameRepository()
 fun HomeAppScreen(gameListViewModel: GameListViewModel){
     var isLoading by remember { mutableStateOf(true) }
     val coroutineScope = rememberCoroutineScope()
+
     LaunchedEffect(Unit) {
-        gameRepository.fetchGames()?.let {
-            gameListViewModel.replaceGames(it.results)
-            gameListViewModel.replaceNextPage(it.next)
-            gameListViewModel.replacePreviousPage(it.previous)
+        if(gameListViewModel.isFirstLoad){
+            gameRepository.fetchGames()?.let {
+                gameListViewModel.replaceGames(it.results)
+                gameListViewModel.replaceNextPage(it.next)
+                gameListViewModel.replacePreviousPage(it.previous)
+            }
+            gameListViewModel.changeIsFirstLoad()
         }
         isLoading = false
     }

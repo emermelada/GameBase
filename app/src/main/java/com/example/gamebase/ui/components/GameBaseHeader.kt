@@ -12,7 +12,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun gameBaseHeader(){
+fun GameBaseHeader(){
     Row(
         modifier = Modifier
             .fillMaxWidth()

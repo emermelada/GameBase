@@ -20,8 +20,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import com.example.gamebase.R
-import com.example.gamebase.ui.components.gameBaseHeader
-import com.example.gamebase.ui.components.registerLogInField
+import com.example.gamebase.ui.components.GameBaseHeader
+import com.example.gamebase.ui.components.RegisterLogInField
 
 @Composable
 fun SignUpScreen(onClickSignUp: (String, String)-> Unit, onClickGoToLogIn: () -> Unit){
@@ -30,7 +30,7 @@ fun SignUpScreen(onClickSignUp: (String, String)-> Unit, onClickGoToLogIn: () ->
     var password by remember { mutableStateOf("") }
     var passwordCheck by remember { mutableStateOf("") }
     Column{
-        gameBaseHeader()
+        GameBaseHeader()
         Column(
             modifier = Modifier.fillMaxSize(),
             verticalArrangement = Arrangement.Center,
@@ -40,10 +40,10 @@ fun SignUpScreen(onClickSignUp: (String, String)-> Unit, onClickGoToLogIn: () ->
                 elevation = CardDefaults.cardElevation(
                     defaultElevation = 9.dp)
             ){
-                registerLogInField(R.string.emailSignUp, email) { it: String -> email = it }
-                registerLogInField(R.string.usernameSignUp, username) { it: String -> username = it }
-                registerLogInField(R.string.passwordSignUp, password) { it: String -> password = it }
-                registerLogInField(R.string.passwordSignUpCheck, passwordCheck) { it: String -> passwordCheck = it }
+                RegisterLogInField(R.string.emailSignUp, email) { it: String -> email = it }
+                RegisterLogInField(R.string.usernameSignUp, username) { it: String -> username = it }
+                RegisterLogInField(R.string.passwordSignUp, password) { it: String -> password = it }
+                RegisterLogInField(R.string.passwordSignUpCheck, passwordCheck) { it: String -> passwordCheck = it }
             }
             Button(
                 modifier = Modifier

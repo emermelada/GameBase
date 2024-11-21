@@ -3,11 +3,14 @@ package com.example.gamebase.ui.activities
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.compose.material3.Text
+import androidx.activity.viewModels
+import com.example.gamebase.ui.screens.GameListViewModel
 import com.google.firebase.auth.FirebaseAuth
+import com.example.gamebase.ui.screens.HomeAppScreen
 
 class HomeAppActivity: ComponentActivity() {
     private lateinit var auth: FirebaseAuth
+    private val gameListViewModel: GameListViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -15,8 +18,7 @@ class HomeAppActivity: ComponentActivity() {
         auth = FirebaseAuth.getInstance()
 
         setContent {
-            Text("Hola hola")
-            auth.signOut()
+            HomeAppScreen(gameListViewModel)
         }
     }
 }

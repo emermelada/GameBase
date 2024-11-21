@@ -20,8 +20,8 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import com.example.gamebase.R
-import com.example.gamebase.ui.components.gameBaseHeader
-import com.example.gamebase.ui.components.registerLogInField
+import com.example.gamebase.ui.components.GameBaseHeader
+import com.example.gamebase.ui.components.RegisterLogInField
 
 @Composable
 fun LogInScreen(onClickLogIn: (String, String)-> Unit, onClickGoToSignUp: ()-> Unit){
@@ -29,7 +29,7 @@ fun LogInScreen(onClickLogIn: (String, String)-> Unit, onClickGoToSignUp: ()-> U
     var password by remember { mutableStateOf("") }
 
     Column{
-        gameBaseHeader()
+        GameBaseHeader()
         Column(
             modifier = Modifier.fillMaxSize(),
             verticalArrangement = Arrangement.Center,
@@ -39,8 +39,8 @@ fun LogInScreen(onClickLogIn: (String, String)-> Unit, onClickGoToSignUp: ()-> U
                 elevation = CardDefaults.cardElevation(
                     defaultElevation = 9.dp)
             ){
-                registerLogInField(R.string.emailSignUp, email) { it: String -> email = it }
-                registerLogInField(R.string.passwordSignUp, password) { it: String -> password = it }
+                RegisterLogInField(R.string.emailSignUp, email) { it: String -> email = it }
+                RegisterLogInField(R.string.passwordSignUp, password) { it: String -> password = it }
             }
             Button(
                 modifier = Modifier

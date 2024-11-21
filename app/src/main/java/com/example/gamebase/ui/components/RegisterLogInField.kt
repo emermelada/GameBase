@@ -9,7 +9,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun registerLogInField(idString: Int, value: String, onChangeField: (String)->Unit){
+fun RegisterLogInField(idString: Int, value: String, onChangeField: (String)->Unit){
     Text(
         text = stringResource(idString),
         modifier = Modifier

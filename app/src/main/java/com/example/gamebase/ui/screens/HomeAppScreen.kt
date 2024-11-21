@@ -14,6 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.gamebase.data.repositories.GameRepository
 import com.example.gamebase.ui.components.games.GameItem
+import com.example.gamebase.ui.viewmodels.GameListViewModel
 
 @Composable
 fun HomeAppScreen(gameListViewModel: GameListViewModel){
@@ -27,7 +28,7 @@ fun HomeAppScreen(gameListViewModel: GameListViewModel){
     }
 
     if(isLoading){
-        CircularProgressIndicator()
+        CircularProgressIndicator(modifier = Modifier.padding(16.dp))
     }else{
         LazyColumn (modifier = Modifier.padding(16.dp)){
             items(gameListViewModel.games) { game ->

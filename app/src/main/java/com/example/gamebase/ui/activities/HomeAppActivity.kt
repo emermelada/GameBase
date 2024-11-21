@@ -4,7 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
-import com.example.gamebase.ui.screens.GameListViewModel
+import com.example.gamebase.ui.viewmodels.GameListViewModel
 import com.google.firebase.auth.FirebaseAuth
 import com.example.gamebase.ui.screens.HomeAppScreen
 

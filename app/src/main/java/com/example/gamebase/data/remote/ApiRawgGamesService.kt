@@ -7,4 +7,5 @@ import retrofit2.http.Query
 interface ApiRawgGamesService {
     @GET("games")
     suspend fun getGames(@Query("key") apiKey: String): ApiResponse
+
 }

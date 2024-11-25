@@ -1,5 +1,6 @@
 package com.example.gamebase.ui.components.games
 
+import android.util.Log
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -21,7 +22,11 @@ fun GameItem(game: Game){
     ) {
         Column ( modifier = Modifier.padding(8.dp)){
             Text(text = "Name: ${game.name}", style = MaterialTheme.typography.bodyLarge)
-            AsyncImage(model = game.background_image, contentDescription = "${game.name} image.")
+            AsyncImage(
+                model = game.background_image,
+                contentDescription = "${game.name} image."
+            )
+
             Text(text = "Metacritic: ${game.metacritic}", style = MaterialTheme.typography.bodyMedium)
         }
     }

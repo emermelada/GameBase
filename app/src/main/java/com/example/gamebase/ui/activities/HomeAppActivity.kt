@@ -4,9 +4,9 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
+import com.example.gamebase.ui.components.MainScaffold
 import com.example.gamebase.ui.viewmodels.GameListViewModel
 import com.google.firebase.auth.FirebaseAuth
-import com.example.gamebase.ui.screens.HomeAppScreen
 
 class HomeAppActivity: ComponentActivity() {
     private lateinit var auth: FirebaseAuth
@@ -18,7 +18,7 @@ class HomeAppActivity: ComponentActivity() {
         auth = FirebaseAuth.getInstance()
 
         setContent {
-            HomeAppScreen(gameListViewModel)
+            MainScaffold(gameListViewModel)
         }
     }
 }

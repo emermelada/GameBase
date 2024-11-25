@@ -9,6 +9,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import coil3.compose.AsyncImage
 import com.example.gamebase.data.model.Game
 
 @Composable
@@ -20,6 +21,7 @@ fun GameItem(game: Game){
     ) {
         Column ( modifier = Modifier.padding(8.dp)){
             Text(text = "Name: ${game.name}", style = MaterialTheme.typography.bodyLarge)
+            AsyncImage(model = game.background_image, contentDescription = "${game.name} image.")
             Text(text = "Metacritic: ${game.metacritic}", style = MaterialTheme.typography.bodyMedium)
         }
     }

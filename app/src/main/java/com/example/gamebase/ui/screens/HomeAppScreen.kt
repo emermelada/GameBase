@@ -1,7 +1,10 @@
 package com.example.gamebase.ui.screens
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -29,7 +32,7 @@ import kotlinx.coroutines.launch
 val gameRepository = GameRepository()
 
 @Composable
-fun HomeAppScreen(gameListViewModel: GameListViewModel){
+fun HomeAppScreen(innerPadding: PaddingValues, gameListViewModel: GameListViewModel){
     var isLoading by remember { mutableStateOf(true) }
     val coroutineScope = rememberCoroutineScope()
 
@@ -46,10 +49,17 @@ fun HomeAppScreen(gameListViewModel: GameListViewModel){
     }
 
     if(isLoading){
-        CircularProgressIndicator(modifier = Modifier.padding(16.dp))
+        Column(
+            modifier = Modifier.padding(innerPadding)
+                .fillMaxSize(),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+            ){
+            CircularProgressIndicator(modifier = Modifier.padding(16.dp))
+        }
     }else{
         Column(
-            modifier = Modifier.padding(16.dp),
+            modifier = Modifier.padding(innerPadding),
             horizontalAlignment = Alignment.CenterHorizontally
         ){
             LazyColumn (modifier = Modifier.weight(1f)) {
@@ -57,7 +67,7 @@ fun HomeAppScreen(gameListViewModel: GameListViewModel){
                     GameItem(game)
                 }
             }
-            Row {
+            Row ( modifier = Modifier.padding(0.dp)){
                 IconButton(
                     onClick = {
                         coroutineScope.launch {

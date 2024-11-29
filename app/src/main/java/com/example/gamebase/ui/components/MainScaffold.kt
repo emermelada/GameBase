@@ -12,8 +12,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import com.example.gamebase.ui.screens.HomeAppScreen
-import com.example.gamebase.ui.viewmodels.GameListViewModel
+import com.example.gamebase.ui.screens.homeApp.HomeAppScreen
+import com.example.gamebase.ui.screens.homeApp.GameListViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

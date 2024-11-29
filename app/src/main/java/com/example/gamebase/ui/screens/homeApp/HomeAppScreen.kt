@@ -1,4 +1,4 @@
-package com.example.gamebase.ui.screens
+package com.example.gamebase.ui.screens.homeApp
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -26,7 +26,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.gamebase.data.repositories.GameRepository
 import com.example.gamebase.ui.components.games.GameItem
-import com.example.gamebase.ui.viewmodels.GameListViewModel
 import kotlinx.coroutines.launch
 
 val gameRepository = GameRepository()

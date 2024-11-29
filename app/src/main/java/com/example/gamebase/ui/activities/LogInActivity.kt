@@ -6,7 +6,7 @@ import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import com.example.gamebase.MainActivity
-import com.example.gamebase.ui.screens.LogInScreen
+import com.example.gamebase.ui.screens.logIn.LogInScreen
 import com.google.firebase.auth.FirebaseAuth
 
 class LogInActivity: ComponentActivity() {

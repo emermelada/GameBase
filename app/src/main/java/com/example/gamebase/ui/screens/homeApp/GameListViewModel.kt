@@ -1,4 +1,4 @@
-package com.example.gamebase.ui.viewmodels
+package com.example.gamebase.ui.screens.homeApp
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf

@@ -1,4 +1,4 @@
-package com.example.gamebase.ui.screens
+package com.example.gamebase.ui.screens.signUp
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
